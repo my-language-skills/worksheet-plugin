@@ -106,7 +106,7 @@ if ( function_exists ('register_sidebar')){
      register_sidebar( array(
          'name' => __( 'Search by grammar units', 'books4languages' ),
          'id' => 'grammar-books4languages-widget-area',
-         'description' => __( 'Search by units widget area', 'books4languages' ),
+         'description' => __( 'Search by grammar units widget area', 'books4languages' ),
          'before_widget' => '<div id="%1$s" class="widget-container %2$s">',
          'after_widget' => '</div>',
          'before_title' => '<h3 class="widget-title">',
@@ -117,7 +117,7 @@ if ( function_exists ('register_sidebar')){
      register_sidebar( array(
          'name' => __( 'Search by vocabulary units', 'books4languages' ),
          'id' => 'vocabulary-books4languages-widget-area',
-         'description' => __( 'Search by units widget area', 'books4languages' ),
+         'description' => __( 'Search by vocabulary units widget area', 'books4languages' ),
          'before_widget' => '<div id="%1$s" class="widget-container %2$s">',
          'after_widget' => '</div>',
          'before_title' => '<h3 class="widget-title">',
@@ -127,7 +127,7 @@ if ( function_exists ('register_sidebar')){
      register_sidebar( array(
          'name' => __( 'Search by orthography units', 'books4languages' ),
          'id' => 'orthography-books4languages-widget-area',
-         'description' => __( 'Search by units widget area', 'books4languages' ),
+         'description' => __( 'Search by orthography units widget area', 'books4languages' ),
          'before_widget' => '<div id="%1$s" class="widget-container %2$s">',
          'after_widget' => '</div>',
          'before_title' => '<h3 class="widget-title">',
@@ -137,12 +137,14 @@ if ( function_exists ('register_sidebar')){
      register_sidebar( array(
          'name' => __( 'Search by cultural units', 'books4languages' ),
          'id' => 'culture-books4languages-widget-area',
-         'description' => __( 'Search by units widget area', 'books4languages' ),
+         'description' => __( 'Search by cultural units widget area', 'books4languages' ),
          'before_widget' => '<div id="%1$s" class="widget-container %2$s">',
          'after_widget' => '</div>',
          'before_title' => '<h3 class="widget-title">',
          'after_title' => '</h3>',
      ) );
+
+
 }
 
 ?>
