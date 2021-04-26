@@ -64,4 +64,4 @@ get_header(); ?>
   <!-- end right sidebar -->
 
 </div>
-<?php get_footer(); ?>
+<?php get_footer();

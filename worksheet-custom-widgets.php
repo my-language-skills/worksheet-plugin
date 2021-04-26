@@ -144,7 +144,13 @@ if ( function_exists ('register_sidebar')){
          'after_title' => '</h3>',
      ) );
 
-
+     register_sidebar( array(
+         'name' => __( 'Search by revisions themes', 'books4languages' ),
+         'id' => 'revisions-books4languages-widget-area',
+         'description' => __( 'Search by revisions widget area', 'books4languages' ),
+         'before_widget' => '<div id="%1$s" class="widget-container %2$s">',
+         'after_widget' => '</div>',
+         'before_title' => '<h3 class="widget-title">',
+         'after_title' => '</h3>',
+     ) );
 }
-
-?>

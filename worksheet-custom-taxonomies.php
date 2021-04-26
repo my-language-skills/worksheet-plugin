@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Custom taxonomies
  *
@@ -19,8 +20,6 @@
  //https://code.tutsplus.com/es/tutorials/php-control-structures-and-loops--cms-31999
  //https://wordpress.stackexchange.com/questions/156464/how-to-add-metabox-for-post-of-specific-category
 
- //Show the taxonomies if in Default WP Categories the same category name is selected.
- $post_id = $_GET['post'] ? $_GET['post'] : $_POST['post_ID'] ;
 
 
  /**
@@ -60,6 +59,7 @@
          'show_tagcloud' => true,
          'show_admin_column' => true,
          'hierarchical' => true,
+         'show_in_rest' => true,
 
      // Add capabilities for specific role
          'capabilities' => array (
@@ -116,6 +116,7 @@ function register_taxonomy_grammar() {
        'show_tagcloud' => true,
        'show_admin_column' => true,
        'hierarchical' => true,
+       'show_in_rest' => true,
 
    // Add capabilities for specific role
        'capabilities' => array (
@@ -169,6 +170,7 @@ function register_taxonomy_vocabulary() {
        'show_tagcloud' => true,
        'show_admin_column' => true,
        'hierarchical' => true,
+       'show_in_rest' => true,
 
    // Add capabilities for specific role
        'capabilities' => array (
@@ -222,6 +224,8 @@ function register_taxonomy_orthography() {
        'show_tagcloud' => true,
        'show_admin_column' => true,
        'hierarchical' => true,
+       'show_in_rest' => true,
+
 
    // Add capabilities for specific role
        'capabilities' => array (
@@ -276,6 +280,8 @@ function register_taxonomy_culture() {
        'show_tagcloud' => true,
        'show_admin_column' => true,
        'hierarchical' => true,
+       'show_in_rest' => true,
+
 
    // Add capabilities for specific role
        'capabilities' => array (
@@ -302,12 +308,20 @@ function register_taxonomy_culture() {
 *
 */
 
+// if (is_admin() ){
+// $post_id = isset($_GET['post']) ? $_GET['post'] : isset($_POST['post_ID']) ;
+// if( $post_id && in_category('audio', $post_id) ){
+//
+//    add_action('admin_init', 'add_meta_boxes', 1);
+//  }
+// }
 
 add_action( 'admin_menu', 'remove_custom_taxonomy' );
 
 function remove_custom_taxonomy() {
+    $post_id = isset($_GET['post']) ? $_GET['post'] : isset($_POST['post_ID']) ;
 
-    $post_id = $_GET['post'] ? $_GET['post'] : $_POST['post_ID'] ;
+    //OLD APROACH:::   $post_id = $_GET['post'] ? $_GET['post'] : $_POST['post_ID'] ;
 
     if ( is_admin() )
         if( ! current_user_can('administrator')) {  {
@@ -326,8 +340,3 @@ function remove_custom_taxonomy() {
             }
         }
     }
-
-
-
-
-?>

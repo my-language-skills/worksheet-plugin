@@ -32,6 +32,8 @@ function worksheet_filter_posts_columns( $columns ) {
   $columns['watu'] = __( 'watu', 'worksheet' );
   $columns['audio-rec'] = __( 'audio-rec', 'worksheet' );
   $columns['url'] = __( 'url', 'worksheet' );
+  $columns['exceropt'] = __( 'excerpt', 'worksheet' );
+
   return $columns;
 }
 
@@ -107,4 +109,7 @@ function worksheet_column( $column, $post_id ) {
       _e('No URL');
     }
   }
+
+
+
 }
